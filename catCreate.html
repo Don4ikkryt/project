@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<title>
+    
+</title>   
+<body style="background-color:#e8387b;">
+    <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">Site for single woman</p>
+   <style>
+    div.forReader { 
+  
+        background: #ffffff; 
+       margin-left:30%;
+       margin-right:20%;
+       margin-top:5%;
+       margin-bottom: 5%;
+       border: 3px solid #000;
+       width: 500px;
+    
+       } 
+       </style>
+    
+    {{if gt .ID 0}}
+        <div class="forReader" style= "height: 220px;">
+        <p>New cat was added to your base:</p>
+        <p>Id: {{.ID}}</p>
+        <p>Name: {{.Name}}</p>
+        <p>Age: {{.Age}}</p>
+        <p>Gender: {{.Gender}}</p>
+        <p>Color: {{.Color}}</p> 
+    </div>
+    {{else}}
+    <div class="forReader" style= "height: 100px;">
+    <p align ="center" >You entered wrong data</p>
+    </div>
+ {{end}}
+        <form style="margin-left: 45%" method="get" action="http://localhost:8080/">
+            <input type="submit" value="Return">
+        </form> 
+
+   
+   
+
+    <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">By Denis Sydorenko</p>
+</body>
+</html>   
