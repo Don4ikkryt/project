@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head><title>
+    
+        </title>
+        <script src="http://code.jquery.com/jquery-1.8.3.js" ></script>
+        <script> 
+               $(function() {
+            $($('button')[0]).on('click', function () {
+                let html = `
+                <p align="center" style="font-size:16pt"><b>Registration</b></p>
+                <br>
+                <form style=" margin-left: 37%;" method="post" action="http://localhost:8080/createUser">
+                  <label for="name">Your name:</label><br>
+                  <input type="text" id="name" name="name" maxlength="30" minlenght="1"><br>
+                  <label for="age">Your age:</label><br>
+                  <input type="number" id="age" name="age" min="0"><br>
+                  <label for="gender">Your gender:</label><br>
+                  <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select><br><br>
+                  <label for="username">Create username:</label><br>
+                  <input type="text" id="username" name="username"  maxlength="20" minlength="10"><br>
+                  <label for="password">Create password:</label><br>
+                  <input type="password" id="password" name="password"  maxlength="20" minlength="10"><br>
+                  <br>
+                  <input type="submit" value="Submit">
+                </form><br><br>`
+                $($('.forAuthorization')).empty()
+                $($('.forAuthorization')).html(html) })
+            })
+            $(function() {
+                $($('button')[1]).on('click', function () {
+                    let html = `
+                    <p align="center" style="font-size:16pt"><b>Autorization</b></p>
+                    <br>
+                    <form style=" margin-left: 37%;" method="post" action="http://localhost:8080/autorization">
+                      <label for="username">Your username:</label><br>
+                      <input type="text" id="username" name="username"   maxlength="20" minlength="10"><br>
+                      <label for="password">Your password:</label><br>
+                      <input type="password" id="password" name="password"  maxlength="20" minlength="10"><br>
+                      <br>
+                      <input type="submit" value="Submit">
+                    </form><br><br>`
+                    $($('.forAuthorization')).empty()
+                    $($('.forAuthorization')).html(html)  })
+                })
+            
+            
+            </script>
+     </head>
+        <body style="background-color:#e8387b;">
+            <style>
+                div.forAuthorization { 
+      
+                    background: #ffffff; 
+                   margin-left:30%;
+                   margin-right:20%;
+                   margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   width: 500px;
+                
+                   } 
+                   div.forButtons{
+                    background: #ffffff; 
+                    margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   
+                   }
+                   </style>
+         <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">Site for single woman</p>
+           <div class="forButtons">  <button style="position: relative;left: 34%;">Registration</button>
+            <button style="position: relative;left: 50%;">Autorization</button></div>
+            
+<div class="forAuthorization">
+     <p>{{.Name}} </p> 
+</div>
+
+
+
+         <p align="center"
+         style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">By Denis
+         Sydorenko</p>
+
+</body>

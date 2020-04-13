@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head><title>
+    
+        </title>
+        <script src="http://code.jquery.com/jquery-1.8.3.js" ></script>
+       
+     </head>
+        <body style="background-color:#e8387b;">
+            <style>
+                div.adminPage { 
+      
+                    background: #ffffff; 
+                   margin-left:30%;
+                   margin-right:20%;
+                   margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   width: 500px;
+                
+                   } 
+                  
+                   </style>
+         <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">Site for single woman</p>
+  <div class="adminPage">
+    <form style=" margin-left: 37%;" method="post" action="http://localhost:4040/message">
+        <label for="id">User`s id:</label><br>
+        <input type="number" id="id" name="id"><br>
+ <label for="message">Message:</label><br>
+ <input type="text" id="message" name="message"   maxlength="20">
+ <br>
+ <br>
+ <input type="submit" value="Submit">
+ <br>
+ <br>
+    </form>
+  </div>
+          <div class ="adminPage">
+            <p>Information about users:</p> 
+            {{range .Users}}
+            <p>ID: {{.ID}}</p>
+            <p>Name: {{.Name}}</p> 
+            <p>Age: {{.Age}}</p>
+            <p>Gender: {{.Gender}} </p>
+            <p>Message: {{.Message}} </p>
+         <br><br>
+            {{end}}
+            </div>
+            
+            <p align="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">By Denis Sydorenko</p>
+
+
+        </body>
+</html>

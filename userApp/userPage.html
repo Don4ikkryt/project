@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head><title>
+    
+        </title>
+         <script src="http://code.jquery.com/jquery-1.8.3.js" ></script>
+        <script>
+        
+        $(function() { 
+
+            $($('button')[0]).on('click', function () {
+                let html = `<p align="center" style="font-size:16pt"><b>Update information about</b></p><br>
+                <form style="margin-left: 37%;" method="post" action="http://localhost:8080/updateUser">
+                   <label for="name">Your name:</label><br>
+                  <input type="text" id="name" name="name" value={{.Name}}><br>
+                  <label for="age">Your age:</label><br>
+                  <input type="number" id="age" name="age" value={{.Age}}><br>
+                <label for="gender">Choose Your gender:</label><br>
+                  <select id="gender" name="gender" >
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <br>
+                  <input type="submit" value="Submit">
+                </form>
+                <br> `
+                $($('.userPage')).empty();
+                $($('.userPage')).html(html);});});
+            $(function() {
+                $($('button')[1]).on('click', function () {
+                    let html = `<p align="center" style="font-size:16pt"><b>Do you want to delete?</b></p>
+                        <form style="margin-left: 45%;" method="GET" action="http://localhost:8080/deleteUser">
+                         <input type="submit" value="Submit">
+                            </form>
+                            <br>`                 
+                    $($('.userPage')).empty();
+                    $($('.userPage')).html(html);})});
+            
+            
+                $(function() {
+                  $($('button')[2]).on('click', function () {
+                    let html =`<p align="center" style="font-size:16pt"><b>Add new cat</b></p>
+                    <br>
+                    <form style="margin-left: 37%;" method="POST" action="http:/`+`/localhost:8080/createCat">
+                      <label for="name">Cat\`s name:</label><br>
+                      <input type="text" id="name" name="name" maxlength="20" minlength="1"><br>
+                      <label for="age">Cat\`s age:</label><br>
+                      <input type="number" id="age" name="age" min="0"><br>
+                      <label for="breed">Cat\`s breed:</label><br>
+                      <input type="text" id="breed" name="breed" maxlength="20" minlength="1"><br>
+                      <label for="color">Cat\`s color:</label><br>
+                      <input type="text" id="color" name="color" maxlength="20" minlength="1"><br><br>
+                      <label for="gender">Choose cat\`s gender:</label><br>
+                      <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                      <br>
+                      <input type="submit" value="Submit">
+                    </form>
+                    <br>`
+                    $($('.userPage')).empty();
+                    $($('.userPage')).html(html);});});
+        
+        
+                $(function() {
+                  $($('button')[3]).on('click', function () {
+                    let html = `<p align="center" style="font-size:16pt"><b>Update cat</b></p><br>
+                    <form style="margin-left: 37%;" method="post" action="http:/`+`/localhost:8080/updateCat">
+                    <label for="id">Cat\`s id:</label><br>
+              <input type="number" id="id" name="id"><br></br>
+              <p>Enter new information about cat:</p>
+                        <label for="name">Cat\`s name:</label><br>
+                      <input type="text" id="name" name="name" maxlength="20" minlength="1"><br>
+                      <label for="age">Cat\`s age:</label><br>
+                      <input type="number" id="age" name="age" min="0"><br>
+                      <label for="breed">Cat\`s breed:</label><br>
+                      <input type="text" id="breed" name="breed" maxlength="20" minlength="1"><br>
+                      <label for="color">Cat\`s color:</label><br>
+                      <input type="text" id="color" name="color" maxlength="20" minlength="1"><br><br>
+                      <label for="gender">Choose cat\`s gender:</label><br>
+                      <select id="gender" name="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                      <input type="submit" value="Submit">
+                    </form>
+                    <br>`
+                    $($('.userPage')).empty();
+                    $($('.userPage')).html(html);});});
+        
+        
+                $(function() {
+                  $($('button')[4]).on('click', function () {
+                    let html = ` 
+                     <p align="center" style="font-size:16pt"><b>Delete information about cat by id</b></p>
+                      <form style="margin-left: 37%;" method="get" action="http:/`+`/localhost:8080/deleteCat">
+                      <label for="id">Cat\`s id:</label><br>
+                      <input type="number" id="id" name="id">
+                      <input type="submit" value="Submit">
+                    </form>
+                    <br>`
+                    $($('.userPage')).empty();
+                    $($('.userPage')).html(html);});});
+                     </script></head>
+        <body style="background-color:#e8387b;">
+            <style>
+                div.userPage { 
+      
+                    background: #ffffff; 
+                   margin-left:30%;
+                   margin-right:20%;
+                   margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   width: 500px;
+                
+                   } 
+                   div.forButtons{
+                    background: #ffffff; 
+                    margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   
+                   }
+                   div.forCats{
+                    background: #ffffff; 
+                   margin-left:30%;
+                   margin-right:20%;
+                   margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   width: 500px;
+                   }
+                   </style>
+            <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">Site for single woman</p>
+           
+            
+            
+            <div class="forButtons">
+                <button style="position: relative;left: 15%;">Update information about you</button>
+                <button style="position: relative;left: 24%;">Delete your page</button>
+                <button style="position: relative;left: 29%;">Add cat</button>
+                <button style="position: relative;left: 34%;">Update cat</button>
+                <button style="position: relative;left: 39%;">Delete cat</button>
+                </div>
+            <div class ="userPage">
+<p>Information about you:</p>            
+<p>Name: {{.Name}}</p> 
+<p>Age: {{.Age}}</p>
+<p>Gender: {{.Gender}} </p>
+<p>Message: {{.Message}} </p>
+</div>
+<div class="forCats"> 
+  <p>Your cats:</p>
+  {{range .Cats}}
+  <p>Id: {{.ID}} Name: {{.Name}}, age: {{.Age}}, breed: {{.Breed}}, gender: {{.Gender}}, color: {{.Color}} </p>
+  {{end}}
+  
+</div> 
+
+
+            <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">By Denis Sydorenko </p>
+        </body>

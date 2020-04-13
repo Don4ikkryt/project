@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head><title>
+    
+        </title>
+        <script src="http://code.jquery.com/jquery-1.8.3.js" ></script>
+       
+     </head>
+        <body style="background-color:#e8387b;">
+            <style>
+                div.adminPage { 
+      
+                    background: #ffffff; 
+                   margin-left:30%;
+                   margin-right:20%;
+                   margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   width: 500px;
+                
+                   } 
+                   div.forButtons{
+                    background: #ffffff; 
+                    margin-top:5%;
+                   margin-bottom: 5%;
+                   border: 3px solid #000;
+                   
+                   }
+                   </style>
+         <p align ="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">Site for single woman</p>
+           <div class="forButtons">  <form style="margin-left: 45%;" method="GET" action="http://localhost:4040/readUsers">
+            <input type="submit" value="Read users">
+        </form></div>
+        <div class ="adminPage">
+            <p>Information about you:</p>            
+            <p>Name: {{.Name}}</p> 
+            <p>id: {{.ID}}</p>
+            </div>
+
+            <p align="center" style="font-family: Brush Script MT, Brush Script Std, cursive; font-size:30pt; background-color: #ffffff;">By Denis Sydorenko</p>
+
+
+        </body>
+</html>
