@@ -38,6 +38,7 @@ func createCat(c *gin.Context) {
 			muxForUserCache.Lock()
 			if user, ok := userCache[uint(idOfUser)]; ok {
 				user.Cats = append(user.Cats, cat)
+				userCache[uint(idOfUser)] = user
 				c.JSON(http.StatusOK, user)
 			}
 			muxForUserCache.Unlock()
